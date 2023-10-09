@@ -93,6 +93,9 @@ let decrement = (id) => {
   if(search != undefined && search.item > 0)
   {
     search.item -=1;
+
+    basket = basket.filter((x)=>x.item !== 0);
+
     update(id, search.item);
   }
 };
