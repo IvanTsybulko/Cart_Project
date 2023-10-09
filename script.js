@@ -31,7 +31,7 @@ let shopItemsData = [
 }
 ];
 
-let basket = JSON.parse(localStorage.getItem("cart-data") || []);
+let basket = JSON.parse(localStorage.getItem("cart-data")) || [];
 
 let generateShop = () => {
   
