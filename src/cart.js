@@ -31,7 +31,7 @@ let generateCartItems = () => {
 
           <h4 class="name">${search.name}</h4>
           <h4 class="price">${search.price}$</h4>
-          <i class="bi bi-x-lg"></i>
+          <i onclick="removeItem(${id})" class="bi bi-x-lg"></i>
 
         </div>
         <div class="buttons">
@@ -104,4 +104,38 @@ let update = (id,quantity) => {
   calculation();
 
   localStorage.setItem("cart-data", JSON.stringify(basket));
+
+  totalAmount();
 };
+
+let removeItem =(id)=>{
+  let selectedItem = document.getElementById(id);
+  basket = basket.filter((x)=> x.id !== selectedItem.id)
+
+  update(id, 0);
+
+  generateCartItems();
+}
+
+let totalAmount =()=>{
+  if(basket.length !== 0){
+    let sum = 0;
+
+    for(let i = basket.length;i > 0; i--)
+    {
+      let search = shopItemsData.find((x)=> x.id === basket[i-1].id);
+
+      sum += search.price * basket[i-1].item;
+    }
+
+    labelElement.innerHTML = `
+    <h1 class="total">Total: ${sum}$</h1>
+    <button>Go To Checkout</button>
+    `
+  }
+  else 
+  labelElement.innerHTML = `
+    `
+}
+
+totalAmount();

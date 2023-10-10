@@ -173,3 +173,25 @@ body{
   padding: 5px;
 }
 
+/**
+* !Label for shopping cart
+**/
+
+.text-center{
+  text-align: center;
+}
+
+.text-center h1{
+  margin-bottom: 20px;
+  color: #001d3d;
+}
+
+.text-center button{
+  margin-bottom: 30px;
+
+  padding: 10px;
+  border-radius: 15px;
+  color: white;
+  background-color: #001d3d;
+  cursor: pointer;
+}
