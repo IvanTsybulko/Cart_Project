@@ -191,7 +191,13 @@ body{
 
   padding: 10px;
   border-radius: 15px;
+  width: 150px;
   color: white;
   background-color: #001d3d;
   cursor: pointer;
+}
+
+.text-center .clear-cart{
+  background-color: red;
+  border: red;
 }

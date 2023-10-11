@@ -131,11 +131,22 @@ let totalAmount =()=>{
     labelElement.innerHTML = `
     <h1 class="total">Total: ${sum}$</h1>
     <button>Go To Checkout</button>
+    <button class="clear-cart" onclick="clearCart()">Clear Cart</button>
     `
   }
   else 
   labelElement.innerHTML = `
     `
+}
+
+let clearCart = ()=>{
+  basket = [];
+
+  generateCartItems();
+  totalAmount();
+  calculation();
+
+  localStorage.setItem("cart-data", JSON.stringify(basket));
 }
 
 totalAmount();
